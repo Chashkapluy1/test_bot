@@ -28,7 +28,7 @@ weather_tool = {
 }
 
 model = genai.GenerativeModel(
-    model_name='gemini-1.5-flash-8b',
+    model_name='gemini-2.5-flash',
     tools=weather_tool,
     system_instruction=(
         "You are a Smart Weather & Travel AI Assistant. "
