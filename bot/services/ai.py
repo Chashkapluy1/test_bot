@@ -74,10 +74,12 @@ async def get_ai_response(user_id: int, message: str) -> str:
                             
                             # 2. Return data back to Gemini
                             function_response = [
-                                content_types.Part.from_function_response(
-                                    name="get_weather",
-                                    response={"result": weather_data}
-                                )
+                                {
+                                    'function_response': {
+                                        'name': 'get_weather',
+                                        'response': {'result': weather_data}
+                                    }
+                                }
                             ]
                             response = await chat.send_message_async(function_response)
         
