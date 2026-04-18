@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  ai_bot:
+    build: .
+    container_name: smart_weather_bot
+    restart: unless-stopped
+    env_file:
+      - .env
